@@ -4,6 +4,7 @@ description: "Por que existimos: conectar pessoas, compartilhar conhecimento e t
 pubDate: 2024-06-19
 author: levi-leopoldino
 tags: ["comunidade", "manifesto"]
+canonical: /manifesto/
 ---
 
 A tecnologia nos conecta, mas é a comunidade que verdadeiramente nos transforma.
