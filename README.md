@@ -107,32 +107,44 @@ correspondente e preencha:
 ```yaml
 ---
 title: "Título do post"
-description: "Resumo de uma ou duas frases (aparece nos cards e no SEO)."
+description: "Resumo de uma ou duas frases (50 a 160 caracteres, aparece nos cards e no SEO)."
 pubDate: 2026-10-15
-author: "seu-slug-de-member"   # o nome do seu arquivo em members/, sem .md
+author: "seu-slug-de-member"   # o nome do seu arquivo em members/, sem .md (obrigatório existir)
 tags: ["kubernetes", "ci-cd"]
 draft: false                   # true = não publica (útil pra rascunho em PR)
+canonical: "/manifesto/"       # opcional — override de URL canônica quando aplicável
 ---
 ```
 
 ### Evento (`events/`)
 
+Exemplo com todos os campos (obrigatórios e opcionais):
+
 ```yaml
 ---
 title: "DOUG BR #12 — Observabilidade na prática"
-eventDate: 2026-11-20
-location: "Online"
-format: "online"               # online | presencial | híbrido
-link: "https://..."            # meetup, sympla, linkedin...
-partner: "AWS UG Piracicaba"   # opcional
-flag: "apoio"                  # opcional — apoio | presenca (selo de destaque)
-cover: "https://..."           # opcional — logo do evento no R2
-gallery:                       # opcional — fotos pós-evento no R2
+eventDate: 2026-11-20T19:00:00-03:00  # data e horário de início
+endDate: 2026-11-20T22:00:00-03:00    # opcional — término do evento
+location: "Campinas/SP"               # cidade/UF ou "Online"
+venue: "Campus Tech Campinas"         # opcional — nome do local físico
+address: "Av. Paulista, 1000, Bela Vista, São Paulo - SP" # opcional — endereço completo (recomendado para presencial/híbrido)
+format: "híbrido"                     # online | presencial | híbrido
+status: "agendado"                    # opcional — agendado | cancelado | adiado | online
+description: "Meetup sobre tracing distribuído, OpenTelemetry e métricas em produção." # opcional — se omitido, o site gera
+link: "https://sympla.com.br/..."     # link da página de inscrição/detalhes
+partner: "AWS UG Piracicaba"          # opcional — organizador parceiro
+flag: "apoio"                         # opcional — apoio | presenca (selo de destaque)
+cover: "https://..."                  # opcional — logo do evento no R2
+gallery:                              # opcional — fotos pós-evento no R2
   - "https://..."
 ---
 ```
 
-Lembrando: `flag` exibe um selo de destaque no card; `cover` é a logo principal do evento hospedada no R2; `gallery` são as fotos pós-evento, também no R2. Veja a seção de imagens abaixo.
+Lembrando:
+- `address`: para eventos **presenciais** ou **híbridos**, preencha sempre o endereço completo para que o Google exiba rich results (cards de eventos na busca).
+- `link`: prefira o link direto de inscrição (Sympla, Meetup, Eventbrite) em vez da página institucional da empresa no LinkedIn.
+- `flag`: exibe selo no card (`apoio` = "Apoio DOUG BR", `presenca` = "Estaremos lá").
+- `cover` e `gallery`: imagens hospedadas no bucket R2. Veja a seção de imagens abaixo.
 
 ### Vaga (`jobs/`)
 
@@ -196,6 +208,24 @@ Regras:
   para referenciar no markdown.
 - Imagens referenciadas com caminho relativo **precisam existir** no PR —
   o CI valida isso automaticamente.
+
+---
+
+## Regras de validação e SEO (o que o CI cobra)
+
+O script `node validate.mjs` roda em todo PR e durante o deploy do site para garantir qualidade técnica e consistência de SEO:
+
+### ❌ Erros que barram o PR (o CI falha se encontrar):
+1. **Título repetido:** o título do seu post, evento ou nome de membro não pode ser idêntico a outro já existente, nem colidir com páginas fixas do site (`Blog`, `Eventos`, `Vagas`, `Membros`, `Manifesto`, `Página não encontrada`).
+2. **Descrição repetida:** `description` de posts e eventos não podem ser idênticas entre si.
+3. **Encoding quebrado (mojibake):** o arquivo precisa estar codificado em **UTF-8 sem BOM**. Caracteres corrompidos (como `Ã©`, `Ã¡`, `â€`) quebram a validação.
+4. **Autor inexistente:** o campo `author` no post precisa corresponder ao slug de um membro existente em `members/` (ex: `author: "gabriel"` exige `members/gabriel.md`).
+5. **Frontmatter/Schema inválido:** campos obrigatórios faltando ou com formato incorreto.
+
+### ⚠️ Avisos de qualidade (aparecem no log, mas não bloqueiam o merge):
+- **Tamanho da descrição:** o ideal para a meta description no Google é ter entre **50 e 160 caracteres**.
+- **Endereço do evento (`address`):** eventos presenciais ou híbridos com endereço completo ganham destaque (rich results) na busca do Google.
+- **Link de inscrição:** para eventos futuros, prefira links diretos de inscrição (Sympla, Meetup, Eventbrite) em vez de links institucionais da página do LinkedIn.
 
 ---
 

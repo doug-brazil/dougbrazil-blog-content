@@ -1,5 +1,5 @@
 ---
-name: "LÃ¡zaro"
+name: "Lázaro"
 role: "Community Lead"
 isLead: true
 avatar: "/members/lazaro.jpg"
