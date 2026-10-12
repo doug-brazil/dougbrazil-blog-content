@@ -110,11 +110,26 @@ title: "Título do post"
 description: "Resumo de uma ou duas frases (50 a 160 caracteres, aparece nos cards e no SEO)."
 pubDate: 2026-10-15
 author: "seu-slug-de-member"   # o nome do seu arquivo em members/, sem .md (obrigatório existir)
+category: "kubernetes-plataforma" # opcional — veja lista abaixo (padrão: carreira-comunidade)
+featured: false                # opcional — se true, ganha destaque no topo da listagem
 tags: ["kubernetes", "ci-cd"]
 draft: false                   # true = não publica (útil pra rascunho em PR)
 canonical: "/manifesto/"       # opcional — override de URL canônica quando aplicável
 ---
 ```
+
+**Categorias disponíveis para `category`:**
+- `cloud`: Cloud (Arquitetura, migração e computação em nuvem)
+- `kubernetes-plataforma`: Kubernetes e plataforma (Containers e engenharia de plataforma)
+- `sre-confiabilidade`: SRE e confiabilidade (SLOs, resiliência e gestão de incidentes)
+- `observabilidade`: Observabilidade (Métricas, logs e tracing distribuído)
+- `iac-automacao`: IaC e automação (Terraform, infraestrutura como código)
+- `ci-cd`: CI/CD (Pipelines e entrega contínua)
+- `seguranca-devsecops`: Segurança (DevSecOps, segurança em pipelines)
+- `carreira-comunidade`: Carreira e comunidade (Cultura, liderança e comunidade)
+
+Se `category` não for preenchida, o post é classificado automaticamente como `carreira-comunidade`.
+
 
 ### Evento (`events/`)
 

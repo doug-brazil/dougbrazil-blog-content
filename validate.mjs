@@ -12,6 +12,18 @@ import { z } from 'zod';
 // Prints e diagramas pequenos: OK no repo. Acima disso: vai pro R2.
 const MAX_ASSET_KB = 500;
 
+// Categorias oficiais do blog (sincronizadas com src/data/categories.ts do site)
+const VALID_CATEGORIES = [
+    'cloud',
+    'kubernetes-plataforma',
+    'sre-confiabilidade',
+    'observabilidade',
+    'iac-automacao',
+    'ci-cd',
+    'seguranca-devsecops',
+    'carreira-comunidade',
+];
+
 // ---------- Schemas (espelho de src/content.config.ts) ----------
 const schemas = {
     posts: z.object({
@@ -22,6 +34,10 @@ const schemas = {
         tags: z.array(z.string()).default([]),
         draft: z.boolean().default(false),
         canonical: z.string().optional(), // override do canonical (caminho ou URL), ex: '/manifesto/'
+        category: z.string().refine((val) => VALID_CATEGORIES.includes(val), {
+            message: `categoria inválida. Categorias permitidas: ${VALID_CATEGORIES.join(', ')}`,
+        }).optional(),
+        featured: z.boolean().default(false),
     }),
     events: z.object({
         title: z.string(),
