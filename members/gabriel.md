@@ -2,7 +2,9 @@
 name: "Gabriel Amaro"
 role: "Community Lead"
 isLead: true
-capability: "Observabilidade"   # ou a frente que tu quer tocar
+topics:
+  - observabilidade
+pillar: conhecimento
 avatar: "https://assets.doug.knov.work/members/gabriel.png"
 linkedin: "https://www.linkedin.com/in/amaro-g"
 github: "https://github.com/gaamaro"
