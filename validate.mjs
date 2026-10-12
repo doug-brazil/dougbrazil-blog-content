@@ -12,7 +12,7 @@ import { z } from 'zod';
 // Prints e diagramas pequenos: OK no repo. Acima disso: vai pro R2.
 const MAX_ASSET_KB = 500;
 
-// Categorias oficiais do blog (sincronizadas com src/data/categories.ts do site)
+// Categorias oficiais do blog (sincronizadas com src/data/categories.ts do site - "mudou aqui, muda lá")
 const VALID_CATEGORIES = [
     'cloud',
     'kubernetes-plataforma',
