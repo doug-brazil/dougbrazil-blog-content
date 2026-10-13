@@ -1,5 +1,5 @@
 // Valida o frontmatter e regras de SEO de todo o conteúdo contra os mesmos schemas
-// do src/content.config.ts do site (dougbr-site). Se mudar lá, muda aqui.
+// do src/content.config.ts do site (dougbrazil-blog-foundation). Se mudar lá, muda aqui.
 //
 // ATENÇÃO: Mantenha este arquivo em sincronia com src/content.config.ts do site.
 // Não importe o arquivo do site em runtime: no CI deste repo o site não existe (é privado).
