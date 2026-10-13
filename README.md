@@ -27,8 +27,8 @@ o site atualiza sozinho em alguns minutos. 🚀
 ### 1. Clone o repositório
 
 ```bash
-git clone git@github.com:dougbrasil/dougbr-content.git
-cd dougbr-content
+git clone git@github.com:doug-brazil/dougbrazil-blog-content.git
+cd dougbrazil-blog-content
 ```
 
 ### 2. Instale as dependências (só na primeira vez)
@@ -270,5 +270,5 @@ PR (isso garante que nada quebre o site).
 ---
 
 Dúvidas? Abra uma
-[Discussion](https://github.com/dougbrasil/dougbr-content/discussions) ou fale
+[Discussion](https://github.com/doug-brazil/dougbrazil-blog-content/discussions) ou fale
 com os leads no nosso canal. 💛💚
