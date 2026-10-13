@@ -6,7 +6,9 @@ topics:
   - iac-automacao
   - cloud
 pillar: conhecimento
-order: 7
+avatar: "/members/rogerio-calixto.jpg"
+linkedin: "https://www.linkedin.com/in/rogeriopereiracalixto/"
+order: 6
 ---
 
 Profissional de TI com mais de 25 anos de experiência, atuando com infraestrutura, Cloud Computing (AWS), DevOps e SRE. Entusiasta de automação, Infraestrutura como Código (Terraform) e ambientes modernos de containers como Kubernetes e Talos Linux.
