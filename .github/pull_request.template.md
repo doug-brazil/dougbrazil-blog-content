@@ -8,6 +8,7 @@
 ## Checklist
 - [ ] Frontmatter conforme o modelo do README
 - [ ] Categoria escolhida (para posts do blog)
+- [ ] Temas (`topics`, máx. 3 categorias do blog) e pilar (`pillar`) definidos (para membros)
 - [ ] Datas no formato AAAA-MM-DD
 - [ ] Título único (não repete título de post, evento, membro ou página fixa do site)
 - [ ] Arquivo salvo em UTF-8 (sem caracteres corrompidos/mojibake)

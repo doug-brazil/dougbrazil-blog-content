@@ -68,7 +68,11 @@ const schemas = {
     members: z.object({
         name: z.string(),
         role: z.string(), // ex: Fundador, Community Lead, Membro
-        capability: z.string().optional(), // frente que o lead toca
+        capability: z.string().optional(), // obsoleto: mantido por compatibilidade, substituído por topics
+        topics: z.array(z.string().refine((val) => VALID_CATEGORIES.includes(val), {
+            message: `tópico inválido. Deve ser uma categoria do blog: ${VALID_CATEGORIES.join(', ')}`,
+        })).max(3).optional(),
+        pillar: z.enum(['conexao', 'conhecimento', 'acessibilidade']).optional(),
         isLead: z.boolean().default(false),
         avatar: z.string().optional(), // caminho em /public ou URL
         linkedin: z.string().url().optional(),

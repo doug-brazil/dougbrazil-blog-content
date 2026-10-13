@@ -27,7 +27,7 @@ o site atualiza sozinho em alguns minutos. 🚀
 ### 1. Clone o repositório
 
 ```bash
-git clone git@github.com:gaamaro/dougbr-content.git
+git clone git@github.com:dougbrasil/dougbr-content.git
 cd dougbr-content
 ```
 
@@ -182,22 +182,27 @@ expiresAt: 2026-11-01          # opcional — vaga sai do ar depois
 ---
 name: "Seu Nome"
 role: "Community Lead"         # Fundador | Community Lead | Membro
-capability: "Observabilidade"  # frente que você toca: Cloud, IaC, Comunicação...
+topics:                        # temas de referência (máx 3 slugs de categorias do blog)
+  - observabilidade
+  - cloud
+pillar: "conhecimento"         # opcional: conexao | conhecimento | acessibilidade
 isLead: true
 avatar: "https://assets.doug.knov.work/members/seu-nome.png"  # veja seção de imagens
 linkedin: "https://www.linkedin.com/in/..."
 github: "https://github.com/..."      # opcional
 instagram: "https://instagram.com/..." # opcional
 order: 10                      # ordem de exibição (menor = aparece antes)
+# capability: "..."            # OBSOLETO: mantido por compatibilidade legada; use 'topics'
 ---
 ```
 
 O **corpo** do arquivo do membro vira a bio na página de perfil — escreva à
 vontade em Markdown.
 
-&gt; `capability` ≠ pilar. Pilares (Conexão, Conhecimento, Acessibilidade) são
-&gt; a filosofia da comunidade. A capability é a **frente técnica/de
-&gt; comunidade** que você é responsável por tocar.
+&gt; **Lideranças de referência por temas e pilares:**
+&gt; - `topics`: lista de categorias do blog (máximo 3) em que a pessoa atua como referência técnica para a comunidade.
+&gt; - `pillar`: pilar da comunidade ao qual o lead está diretamente ligado (`conexao`, `conhecimento` ou `acessibilidade`).
+&gt; - `capability`: campo **obsoleto**, mantido por compatibilidade com versões anteriores. Use `topics` no lugar dele.
 
 ---
 
@@ -265,5 +270,5 @@ PR (isso garante que nada quebre o site).
 ---
 
 Dúvidas? Abra uma
-[Discussion](https://github.com/gaamaro/dougbr-content/discussions) ou fale
+[Discussion](https://github.com/dougbrasil/dougbr-content/discussions) ou fale
 com os leads no nosso canal. 💛💚
