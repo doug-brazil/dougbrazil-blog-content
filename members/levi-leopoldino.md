@@ -6,7 +6,6 @@ topics:
   - carreira-comunidade
   - iac-automacao
   - cloud
-pillar: conexao
 avatar: "/members/levi-leopoldino.jpg"
 linkedin: "https://www.linkedin.com/in/levinux/"
 order: 1

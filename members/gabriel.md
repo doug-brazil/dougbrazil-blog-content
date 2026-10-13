@@ -5,7 +5,6 @@ isLead: true
 topics:
   - observabilidade
   - kubernetes-plataforma
-pillar: conhecimento
 avatar: "https://assets.doug.knov.work/members/gabriel.png"
 linkedin: "https://www.linkedin.com/in/amaro-g"
 github: "https://github.com/gaamaro"
@@ -17,5 +16,5 @@ só vale a pena quando é compartilhado — por isso escrevo, apresento e ajudo
 quem está chegando na área.
 
 No dia a dia trabalho com Kubernetes, IaC e plataformas de CI/CD. Aqui na
-comunidade, meu foco é o pilar de **Conhecimento**: conteúdo técnico de
+comunidade, meu foco é apoiar a produção de conteúdo técnico de
 qualidade, acessível e em português.

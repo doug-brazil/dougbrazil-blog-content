@@ -5,7 +5,6 @@ isLead: true
 topics:
   - observabilidade
   - sre-confiabilidade
-pillar: conhecimento
 avatar: "/members/cleiton.jpg"
 linkedin: "https://www.linkedin.com/in/cleitols/"
 order: 4
