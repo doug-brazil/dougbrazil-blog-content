@@ -5,7 +5,6 @@ isLead: true
 topics:
   - iac-automacao
   - cloud
-pillar: conhecimento
 avatar: "/members/rogerio-calixto.jpg"
 linkedin: "https://www.linkedin.com/in/rogeriopereiracalixto/"
 order: 6

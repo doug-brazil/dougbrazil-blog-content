@@ -6,7 +6,6 @@ topics:
   - sre-confiabilidade
   - cloud
   - iac-automacao
-pillar: acessibilidade
 avatar: "/members/julia.jpg"
 linkedin: "https://www.linkedin.com/in/jlamenza/"
 order: 5
