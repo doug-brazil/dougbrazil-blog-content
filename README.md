@@ -27,7 +27,7 @@ o site atualiza sozinho em alguns minutos. 🚀
 ### 1. Clone o repositório
 
 ```bash
-git clone git@github.com:gaamaro/dougbr-content.git
+git clone git@github.com:dougbrasil/dougbr-content.git
 cd dougbr-content
 ```
 
@@ -270,5 +270,5 @@ PR (isso garante que nada quebre o site).
 ---
 
 Dúvidas? Abra uma
-[Discussion](https://github.com/gaamaro/dougbr-content/discussions) ou fale
+[Discussion](https://github.com/dougbrasil/dougbr-content/discussions) ou fale
 com os leads no nosso canal. 💛💚

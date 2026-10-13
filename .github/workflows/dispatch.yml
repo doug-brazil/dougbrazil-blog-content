@@ -13,5 +13,5 @@ jobs:
         uses: peter-evans/repository-dispatch@v3
         with:
           token: ${{ secrets.SITE_DISPATCH_PAT }}
-          repository: gaamaro/dougbr-site
+          repository: dougbrasil/dougbr-site
           event-type: content-updated
