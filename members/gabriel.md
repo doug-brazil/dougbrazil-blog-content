@@ -5,7 +5,6 @@ isLead: true
 topics:
   - observabilidade
   - kubernetes-plataforma
-  - iac-automacao
   - cloud
 pillar: conhecimento
 avatar: "https://assets.doug.knov.work/members/gabriel.png"
