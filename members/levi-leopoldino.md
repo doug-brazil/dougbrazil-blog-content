@@ -7,7 +7,7 @@ topics:
   - iac-automacao
   - cloud
 pillar: conexao
-avatar: "/members/levi-leopoldino.jpg"
+avatar: "https://assets.dougbrazil.tech/members/1791987800989-levi.png"
 linkedin: "https://www.linkedin.com/in/levinux/"
 order: 1
 ---
