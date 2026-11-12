@@ -206,6 +206,68 @@ vontade em Markdown.
 
 ---
 
+## Blocos de código
+
+Os blocos de código aceitam recursos avançados de formatação através de metadados na abertura do bloco (fenced code block). Todos os blocos exibem botão de cópia automaticamente e usam a fonte JetBrains Mono.
+
+### 1. Título ou nome de arquivo
+Exibe uma moldura de editor (com aba e nome do arquivo) ou de terminal (para comandos em `bash`/`sh`):
+
+````markdown
+```ts title="src/index.ts"
+console.log("Olá, DOUG BR!");
+```
+````
+
+Para comandos em shell com título personalizado na barra:
+
+````markdown
+```bash title="Instalação do Devbox"
+curl -fsSL https://get.jetify.com/devbox | bash
+```
+````
+
+> **Nota:** comandos em `bash` ou `sh` recebem moldura de terminal automaticamente mesmo sem `title`.
+
+### 2. Numeração de linhas (`showLineNumbers`)
+Ative números de linha adicionando `showLineNumbers`:
+
+````markdown
+```yaml title="deploy.yaml" showLineNumbers
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app-service
+```
+````
+
+### 3. Destaque de linhas específicas
+Destaque linhas ou intervalos adicionando os números entre chaves `{...}` ou com `mark={...}`:
+
+````markdown
+```ts title="server.ts" showLineNumbers {2, 4-5}
+import express from "express";
+const app = express();
+
+app.get("/health", (req, res) => {
+  res.status(200).send("OK");
+});
+```
+````
+
+Também é possível indicar inserções (`ins`) e deleções (`del`):
+
+````markdown
+```json title="package.json" ins={3} del={2}
+{
+  "versao-antiga": "1.0.0",
+  "versao-nova": "2.0.0"
+}
+```
+````
+
+---
+
 ## Imagens e arquivos pesados
 
 **Imagens do post** (prints de terminal, diagramas, screenshots): commitam
