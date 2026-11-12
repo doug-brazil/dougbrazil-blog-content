@@ -36,7 +36,15 @@ Com o Devbox, fiz o teste assim, direto do shell:
 git clone https://github.com/grabnerandi/simplenodeservice.git
 ```
 
-![alt text](image.png)
+```text frame="terminal" title="Saída"
+Cloning into 'simplenodeservice'...
+remote: Enumerating objects: 188, done.
+remote: Counting objects: 100% (4/4), done.
+remote: Compressing objects: 100% (4/4), done.
+remote: Total 188 (delta 0), reused 1 (delta 0), pack-reused 184 (from 1)
+Receiving objects: 100% (188/188), 175.78 KiB | 6.51 MiB/s, done.
+Resolving deltas: 100% (76/76), done.
+```
 
 
 2. Entrar na pasta do repositório e inicializar o Devbox:
@@ -46,7 +54,9 @@ cd simplenodeservice
 devbox init
 ```
 
-![alt text](image-1.png)
+```text frame="terminal" title="Saída"
+Info: New devbox available: 0.14.0 -> v0.14.2. Please run `devbox version update`.
+```
 
 
 3. Adicionar a versão específica do NodeJS:
@@ -55,13 +65,30 @@ devbox init
 devbox add nodejs@16
 ```
 
-![alt text](image-2.png)
+```text frame="terminal" title="Saída"
+Info: Adding package "nodejs@16" to devbox.json
+Info: Installing the following packages to the nix store: nodejs@16
+
+nodejs NOTES:
+Devbox automatically configures Corepack for Nodejs when DEVBOX_COREPACK_ENABLED=1. You can install Yarn or Pnpm by adding them to your `package.json` file using `packageManager`
+Corepack binaries will be installed in your local `.devbox` directory
+
+This plugin creates the following helper files:
+
+To show this information, run `devbox info nodejs`
+```
 
 
 4. Entrar no ambiente isolado com o Devbox:
 
 ```bash
 devbox shell
+```
+
+```text frame="terminal" title="Saída"
+Info: Ensuring packages are installed.
+✓ Computed the Devbox environment.
+Starting a devbox shell...
 ```
 
 5. Instalar dependências e subir a aplicação:
@@ -71,7 +98,19 @@ npm install
 npm start
 ```
 
-![alt text](image-3.png)
+```text frame="terminal" title="Saída do npm install"
+up to date, audited 1 package in 133ms
+
+found 0 vulnerabilities
+```
+
+```text frame="terminal" title="Saída do npm start"
+> SimpleNodeJsService@0.0.1 start
+> node app.js
+
+Init: 1/0/500
+Server running at http://127.0.0.1:8080/
+```
 
 
 E pronto. Aplicação no ar. Sem sujeira, sem dor de cabeça. Zero impacto no sistema operacional.
